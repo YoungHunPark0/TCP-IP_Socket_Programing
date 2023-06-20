@@ -1,0 +1,9 @@
+
+include <stdio.h>
+#include <arpa/inet.h>
+
+int main(int argc, char *argv[])
+ {
+   char *addr1="1.2.3.4";
+   char *addr2="1.2.3.256";
+
