@@ -1,0 +1,77 @@
+ay04 $ nano fork.c
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ gcc fork.c -o fork
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ ./fork
+Parent Proc: [9, 23]
+Child Proc: [13, 27]
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ nano fork.c
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ nano zombie.c
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ gcc zombie.c -o zombie
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ ./zombie
+Child Process ID: 1906
+Hi I'am a child process
+End child process
+End parent process
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ nano wait.c
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ gcc wait.c -o wait
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ ./wait
+Child PID: 1936
+Child PID: 1937
+Child send one: 3
+Child send two: 7
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ nano waitpid.c
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ gcc waitpid.c -o waitpid
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ ./waitpid
+sleep 3sec.
+sleep 3sec.
+sleep 3sec.
+sleep 3sec.
+sleep 3sec.
+Child send 24
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ nano signal.c
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ gcc signal.c -o signal
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ ./signal
+wait...
+Time out!
+wait...
+Time out!
+wait...
+Time out!
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ nano sigaction.c
+
+
+나노로 돌아가려면 "fg"를 사용하십시오.
+
+[1]+  멈춤                  nano sigaction.c
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ gcc sigaction.c  -o sigaction
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ nano remove_zombie.c
+
+
+나노로 돌아가려면 "fg"를 사용하십시오.
+
+[2]+  멈춤                  nano remove_zombie.c
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ gcc remove_zombie.c -o zombie
+pi@raspberrypi:~/sources/TCP-IP_Socket_Programing/Work/Socket/Day04 $ nano echo_mpserv.c
+  GNU nano 5.4             echo_mpserv.c *              I
+151       puts("client disconnected...");
+152       return 0;
+153     }
+154     else
+155       close(clnt_sock);
+156   }
+157   close(serv_sock);
+158   return 0;
+159 }
+160
+161 void read_childproc(int sig)
+162 {
+163   pid_t pid;
+164   int status;
+165   pid=waitpid(-1, &status, WNOHANG);
+166   printf("removed proc id: %d \n", pid);
+167 }
+168 void error_handling(char *message)
+169 {
+170   fputs(message, stderr);
+171   fputc('\n', stderr);
+172   exit(1);
+173 }
