@@ -6,7 +6,7 @@
 #include <sys/socket.h>
 #define BUF_SIZE 50000
 #define port 8000
-void errror_handling(char *message);
+void error_handling(char *message);
 
 int main(int argc, char *argv[])
 {

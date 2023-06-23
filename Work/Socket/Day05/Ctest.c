@@ -6,7 +6,8 @@
 #include <sys/socket.h>
 #define BUF_SIZE 50000
 #define port 8000
-void errror_handling(char *message);
+
+void error_handling(char *message);
 
 int main(int argc, char *argv[])
 {
@@ -24,7 +25,7 @@ int main(int argc, char *argv[])
                "<html><head><title> My Web Page </title>\r\n"
                "<style>body {background-color: ##FFFF00 }</style><head>\r\n"
                "<body><center><h1>Hello World!!</h1><br>\r\n"
-               "<img src=\"~/sources/TCP-IP_Socket_Programing/Work/Socket/Day05/hedgehog.jpg"\></center></body></html>\r\n";
+               "<img src=\"hedgehog.jpg\"\></center></body></html>\r\n";
 	
 	if(argc!=2){
 		printf("Usage : %s <port>\n", argv[0]);
