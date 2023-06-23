@@ -122,4 +122,8 @@ TCP/IP 소켓 프로그래밍
 	- 스레드 : 프로세스 관점에서 실행흐름을 구성하는 단위
 		- 멀티스레드
 			- 뮤텍스(Mutex) 쓰레드 동시접근 허용하지 않음
-			- 세마포어(Semaphore)
+
+웹서버 구현
+
+<img
+src="https://raw.githubusercontent.com/YoungHunPark0/TCP-IP_Socket_Programing/main/images/rasptest.png" width="700">
