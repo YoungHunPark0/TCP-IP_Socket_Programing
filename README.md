@@ -127,3 +127,17 @@ TCP/IP 소켓 프로그래밍
 
 <img
 src="https://raw.githubusercontent.com/YoungHunPark0/TCP-IP_Socket_Programing/main/images/rasptest.png" width="700">
+
+## 5일차
+- Python-라즈베리파이
+	- python -m venv env 가상환경 설치
+	- deactivate 빠져나오기
+	- 전역설치 apt get -
+	- 가상환경에서 설치 pip install
+	- GPIO.PUD_DOWN ON = 1, OFF = 0
+	- 0V = ground(GND)
+	- PULL UP, PULL DOWN
+	
+7-Segment 회로도
+<img
+src="https://raw.githubusercontent.com/YoungHunPark0/TCP-IP_Socket_Programing/main/images/7-segment.jpg" width="700">
