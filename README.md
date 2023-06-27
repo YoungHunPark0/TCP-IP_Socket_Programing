@@ -141,3 +141,17 @@ src="https://raw.githubusercontent.com/YoungHunPark0/TCP-IP_Socket_Programing/ma
 7-Segment 회로도
 <img
 src="https://raw.githubusercontent.com/YoungHunPark0/TCP-IP_Socket_Programing/main/images/7-segment.jpg" width="700">
+
+## 6일차
+- Python-라즈베리파이
+	- RPi.GPIO Interrupt
+		- 1. 핀설정
+			- GPIO.add_event_detect(channel, GPIO.Mode)
+			- channel : Pin number
+			- GPIO.Mode : RISING or FALLING or BOTH
+		- 2. 콜백함수 설정
+			- GPIO.add_event_callback(channel, function)
+				- channel : Pin number
+				- function : call back function
+		- 3. 하나의 인터럽트 사용시
+			GPIO.add_event_detect(channel, GPIO.Mode, callback=my_callback, (선택 사항) 바운스 시간(밀리초))
