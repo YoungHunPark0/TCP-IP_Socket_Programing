@@ -1,0 +1,40 @@
+ <body>
+ 8     <h1> LED Control </h1>
+ 9     <div class="main">
+10       <button onclick="led_on()"> LED ON </button>
+11       <button onclick="led_off()"> LED OFF </button>
+12     </div>
+13     <div id="result">
+14     </div>
+15
+16     <script>
+17       function led_on(){
+18         fetch("/led/on")
+19         .then(response =>response.text())
+20         .then(data => {
+21           console.log(data);
+22           let result = document.querySelector("#result")
+23           if(data=="ok"){
+24             result.innerHTML = "<h1> LED is running </h1>"
+25           }
+26           else{
+27             result.innerHTML = "<h1> error </h1>"
+28           }
+29         });
+30       }
+31       function led_off(){
+32         fetch("/led/off")
+33         .then(response => response.text())
+34         .then(data => {
+35           console.log(data);
+36           let result = document.querySelector("#result")
+37           if(data=="ok"){
+38             result.innerHTML = "<h1> LED is stopping </h1>";
+39           }
+40           else{
+41             result.innerHTML = "<h1> error </h1>";
+42           }
+43         });
+44       }
+45     </script>
+46   </body>
