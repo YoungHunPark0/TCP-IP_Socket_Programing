@@ -155,3 +155,9 @@ src="https://raw.githubusercontent.com/YoungHunPark0/TCP-IP_Socket_Programing/ma
 				- function : call back function
 		- 3. 하나의 인터럽트 사용시
 			GPIO.add_event_detect(channel, GPIO.Mode, callback=my_callback, (선택 사항) 바운스 시간(밀리초))
+			
+## 7일차
+- Python-라즈베리파이
+	- Python3 PyQt5 설치
+		- sudo apt-get install python3-pyqt5
+		- sudo apt-get install qttools5-dev-tools
