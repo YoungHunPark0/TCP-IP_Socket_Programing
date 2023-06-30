@@ -19,8 +19,8 @@ class qtApp(QWidget):
 		super().__init__()
 		uic.loadUi('./button.ui', self)
 		
-		self.Btn_ledon.clicked.connect(self.btnledonClicked)
-		self.Btn_ledoff.clicked.connect(self.btnledoffClicked)
+		self.btnledon.clicked.connect(self.btnledonClicked)
+		self.btnledoff.clicked.connect(self.btnledoffClicked)
 
 	def btnledonClicked(self):
 		try:
